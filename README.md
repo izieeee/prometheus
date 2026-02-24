@@ -18,12 +18,18 @@ All actions work only if the user is a channel manager for public channels or a 
 ## Setup
 
 1. Clone
-2. Setup a slack App with these user scopes: `channels:history`, `channels:read`, `chat:write`, `groups:history`, `groups:read`, `im:history`, `mpim:history`, `users:read`. Keep in mind this will only work if you have Workspace Admin
-3. Enable Socket Mode
-4. Setup a message shortcut with the ID `destroy_thread` and `delete_message` and name them accordingly.
-5. Fill out the `.env` file (see `.env.example` if ur lost)
-6. `pnpm i && pnpm start`
-7. Profit???
+2. Create a Slack app from [`slack.manifest.yaml`](./slack.manifest.yaml).
+3. Install/reinstall the app to your workspace so all scopes are granted.
+4. Create an app-level token with `connections:write` (for Socket Mode) and put it in `SLACK_APP_TOKEN`.
+5. Fill out the `.env` file (see `.env.example` if ur lost):
+   - `SLACK_BOT_TOKEN`: Bot User OAuth Token (xoxb)
+   - `SLACK_USER_TOKEN`: User OAuth Token (xoxp, token holder should be Workspace Admin/Owner for admin APIs)
+   - `SLACK_APP_TOKEN`: App-Level Token (xapp) with `connections:write`
+   - `SLACK_SIGNING_SECRET`: Signing secret from the app settings
+6. All commands is routed through `/pro`.
+7. If you want `/pro manager` to work, update `FIELD_ID` in `lib/commands/manager.js` to a custom profile field ID from your workspace.
+8. `bun install && bun start`
+9. Profit???
 
 You should be able to see two new message actions.
 
