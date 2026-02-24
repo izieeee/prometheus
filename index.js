@@ -3,6 +3,7 @@ import { App } from '@slack/bolt';
 import { registerCommands } from './lib/commands/index.js';
 import { registerShortcuts } from './lib/shortcuts/index.js';
 import { registerListeners } from './lib/listeners/index.js';
+import { registerActions } from './lib/actions/index.js';
 
 const app = new App({
   token: process.env.SLACK_USER_TOKEN,
@@ -14,6 +15,7 @@ const app = new App({
 registerCommands(app);
 registerShortcuts(app);
 registerListeners(app);
+registerActions(app);
 
 (async () => {
   await app.start();
