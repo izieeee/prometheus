@@ -5,7 +5,7 @@ display_information:
   name: Prometheus
   long_description: Prometheus is a slack bot that allows community members to manage their own channels. You must be approved by the Fire Department (aka the admins) to use it, but once you are, you can keep your channels clean and even banish unruly members to the shadow realm (or just out of the channel, but that sounds less cool). Get started by running `/pro`.
   description: Channel moderation for the people
-  background_color: "#111111"
+  background_color: "#d03e28"
 
 features:
   bot_user:
@@ -22,8 +22,8 @@ features:
       description: Delete a single message.
   slash_commands:
     - command: /pro
-      description: Prometheus command router.
-      usage_hint: "[ping|here|channel|manager|admin|channelmanager|channelban|channelunban]"
+      description: Use Prometheus
+      usage_hint: "help"
       should_escape: true
 
 oauth_config:
