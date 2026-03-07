@@ -26,6 +26,9 @@ All actions work only if the user is a channel manager for public channels or a 
    - `SLACK_USER_TOKEN`: User OAuth Token (xoxp, token holder should be Workspace Admin/Owner for admin APIs)
    - `SLACK_APP_TOKEN`: App-Level Token (xapp) with `connections:write`
    - `SLACK_SIGNING_SECRET`: Signing secret from the app settings
+   - `SUPERADMINS`: Comma-separated Slack user IDs to seed as global admins (e.g. `U12345678,U87654321`)
+   - `LOG_CHANNEL`: Channel ID to post audit logs to (optional but recommended)
+   - `HACKCLUB_CDN_KEY`: CDN API key for archiving deleted thread transcripts (optional)
 6. All commands is routed through `/pro`.
 7. If you want `/pro manager` to work, update `FIELD_ID` in `lib/commands/manager.js` to a custom profile field ID from your workspace.
 8. `bun install && bun start`
