@@ -40,6 +40,7 @@ oauth_config:
       - chat:write
       - groups:history
       - groups:write
+      - users.profile:read
       - users.profile:write
       - users:read
       - users:read.email
